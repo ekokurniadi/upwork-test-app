@@ -1,4 +1,15 @@
-import { Box, Flex, Heading, IconButton,Text } from "@chakra-ui/react";
+import {
+  Avatar,
+  Box,
+  Flex,
+  Heading,
+  IconButton,
+  Spacer,
+  Text,
+  Wrap,
+  WrapItem,
+} from "@chakra-ui/react";
+import { FiMenu } from "react-icons/fi";
 import SearchBox from "./SearchBox";
 
 export default function Header({ onOpen, ...rest }) {
@@ -14,7 +25,23 @@ export default function Header({ onOpen, ...rest }) {
       bg="white"
       justifyContent={{ base: "space-between", md: "center" }}
     >
-     <SearchBox/>
+        <IconButton mr={2}
+        display={{ base: "flex", md: "none" }}
+        onClick={onOpen}
+        variant="outline"
+        aria-label="open menu"
+        icon={<FiMenu />}
+      />
+      <Spacer />
+      <SearchBox/>
+      <Spacer />
+      <Flex mr={4} ml={2}>
+        <Wrap>
+          <WrapItem>
+            <Avatar name="Dan Abrahmov" src="https://bit.ly/dan-abramov" size="sm"/>
+          </WrapItem>
+        </Wrap>
+      </Flex>
     </Flex>
   );
 }

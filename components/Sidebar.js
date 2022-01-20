@@ -1,5 +1,5 @@
 import { Flex, Box, Text, CloseButton } from "@chakra-ui/react";
-import { FiGrid, FiHome,FiSun,FiBookmark } from "react-icons/fi";
+import { FiGrid, FiHome, FiSun, FiBookmark } from "react-icons/fi";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import NavLink from "./Navlink";
@@ -13,9 +13,9 @@ export default function SideBar({ onClose, ...rest }) {
   }, [router.events, onClose]);
   const LinkItems = [
     { label: "Explore", icon: FiHome, href: "/" },
-    { label: "Topics", icon: FiGrid, href: "/" },
-    { label: "Digest", icon: FiSun, href: "/" },
-    { label: "Bookmark", icon: FiBookmark, href: "/" },
+    { label: "Topics", icon: FiGrid, href: "/topics" },
+    { label: "Digest", icon: FiSun, href: "/digest" },
+    { label: "Bookmark", icon: FiBookmark, href: "/bookmark" },
   ];
   return (
     <Box
@@ -28,10 +28,12 @@ export default function SideBar({ onClose, ...rest }) {
       h="full"
       {...rest}
     >
-    <Flex mt={3}></Flex> 
-    <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose}/>
+      <Flex mt={3}></Flex>
+      <Flex alignItems="center" mx="8" justifyContent="flex-end">
+        <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
+      </Flex>
       {LinkItems.map((link, i) => (
-        <NavLink key={i} link={link}/>
+        <NavLink key={i} link={link} />
       ))}
     </Box>
   );
