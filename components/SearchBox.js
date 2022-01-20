@@ -1,4 +1,4 @@
-import { Box, Flex, Icon, IconButton, Input, Spacer, Text } from "@chakra-ui/react";
+import { Flex, Icon, IconButton, Input, Spacer, Text } from "@chakra-ui/react";
 import { BsSliders,BsSlash } from "react-icons/bs";
 export default function SearchBox() {
   return (

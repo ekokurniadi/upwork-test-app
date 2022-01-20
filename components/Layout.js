@@ -1,6 +1,5 @@
 import { Box, Drawer, DrawerContent, useDisclosure } from "@chakra-ui/react";
 import Header from "./Header";
-import SearchBox from "./SearchBox";
 import SideBar from "./sidebar";
 
 export default function Layout({ children }) {
